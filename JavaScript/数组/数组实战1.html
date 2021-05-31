@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组实战1</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 声明一个函数，找出数组中的最大值
+    function Max(arr) {
+        var max = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    var result = Max([1, 2, 3, 4, 5]);
+    console.log(result);
+</script>

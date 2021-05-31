@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>质数</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 质数:只能被1和本身整除的数
+    for (var num = 1; num <= 100; num++) {
+        var count = 0;
+        for (var m = 1; m <= num; m++) {
+            if (num % m == 0) {
+                count++;
+            }
+        }
+        if(count==2){
+            console.log(num+'是质数');
+        }
+    }
+</script>

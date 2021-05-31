@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的方法和属性</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var arr = [1, 2, 3, 5, 6, 7];
+    console.log(arr.length);  // 获取数组的长度 length
+</script>
+<script>
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    for (i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+</script>
+<script>
+    /*
+    * push:数组尾处添加一个或多个元素
+    * pop:数组尾处移除一个元素
+    *
+    * */
+    var arr = [1, 2, 3, 4, 5, 6, 6, 7];
+    arr.push(56);
+    arr.push("4", 'g');
+    arr.pop();  // 删除数据的最后一个元素
+    console.log(arr);
+    console.log("-----------------------------");
+</script>
+
+<script>
+    /*
+    *  unshift：数组的头部添加一个或者多个元素
+    *  shift:数组头部移除一个元素
+    *
+    * */
+    var arr = [12, 3, 4, 5, 6, 7, 8, 9];
+    arr.unshift("哈哈");
+    arr.unshift("hao", "gh", "ghhhh");
+    // arr.shift("ghhhh");
+    arr.shift();   // 删除数据的第一个元素
+    console.log(arr);
+    console.log("------------------------------");
+</script>
+
+<script>
+    /*
+    *  join: 将数组转为字符串
+    *   reverse:将数组元素倒置
+    *
+    * */
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+    var str = arr.join("*");
+    var str1 = arr.join("");
+    console.log(str1);
+    console.log(str);
+    console.log("*********************");
+    var arr1 = [1, 2, 3, 4, 5];
+    arr1.reverse();
+    console.log(arr1);
+    console.log("==========================");
+</script>
+
+<script>
+    /*
+    *  indexOf:索引值  获取数组元素的索引值  如果获取的元素不在数组中，返回-1
+    *  includes:包含   检测当前是否在数组中，如果存在返回true,否则返回false
+    * */
+    var arr = [1, 2, 3, 4, 5, 6];
+    console.log(arr.indexOf(1));
+    console.log(arr.indexOf(7));
+    console.log(arr.includes(1));
+    console.log("------------------------");
+</script>
+
+<script>
+    /*
+    *  slice:从起始数组当中切割出一个新的数组  slice(起始索引值，结束索引值)  对原数组没有影响
+    *       包含起始位置的元素，不包含结束位置的元素
+    *  splice:可以对数组进行切割， 插入，替换 对原数组有影响
+    *       传递两个参数:第一个参数是起始位置的索引值，第二个代表要切割的长度
+    * */
+    var arr = [1, 2, 3, 4, 5];
+    var new_arr = arr.slice(3);
+    console.log(new_arr);
+    var new_arr1 = arr.slice(2, 4);  // 3,4
+    console.log(new_arr1);
+    console.log("-----------------------------------------");
+
+    // splice
+    var arr1 = [1, 2, 4, 5, 6, 67];
+    // 切割
+    // var newArr = arr1.splice(2);
+    // console.log(newArr);
+    console.log("=============================================");
+    // var newArr1 = arr1.splice(2,3);
+    // console.log(newArr1);
+
+    // 插入  没切割出来进行添加
+    // var arr_ = arr1.splice(2,0,"哈哈");
+    // console.log(arr_);
+    // console.log(arr1);
+
+    // 替换   切割出来进行替换
+    var newArr = arr1.splice(2, 2, "好", "en");
+    console.log(newArr);
+    console.log(arr1);
+</script>

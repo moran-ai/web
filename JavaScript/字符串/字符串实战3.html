@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串实战3</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 将字符串的每一个首字母大写并且各个英文字母之间有空格
+    function fun(str) {
+        var arr = str.split(" ");
+        var result = "";  // 空字符，用来存储结果
+        // 循环获取到每一个字母
+        for (var i = 0; i < arr.length; i++) {
+            // console.log(arr[i][0]);  // 获取到每个首字母
+            // 首字母大写   后面的字母使用切割的方式获取
+            result += arr[i][0].toUpperCase() + arr[i].substr(1) + " ";
+        }
+        return result;
+    }
+
+    var result = fun("welcome to china");
+    console.log(result);
+</script>

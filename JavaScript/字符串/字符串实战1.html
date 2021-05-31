@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串实战1</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 定义一个函数，大写字母以小写形式返回，小写字母以大写形式返回
+    function changeString(str) {
+        var result = "";  // 定义一个空字符串
+        for (var i = 0; i < str.length; i++) {
+            if (str[i] < "a") {
+                // console.log(str[i]);
+                result += str[i].toLowerCase();
+            } else {
+                // console.log(str[i]);
+                result += str[i].toUpperCase();
+            }
+        }
+        return result;
+    }
+
+    var result = changeString("ILikeChina");
+    console.log(result);
+</script>

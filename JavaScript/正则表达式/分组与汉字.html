@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分组与汉字</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    *   分组：()  ()中的内容为一个整体
+    *   汉字：[\u4e00-\u9fa5]
+    * */
+    var str = "adfa";
+    console.log(/(a){1}/.test(str));
+
+    var str_ = "哈哈哈哈哈111";
+    console.log(str_.replace(/[\u4e00-\u9fa5]+/g, "k"));
+</script>

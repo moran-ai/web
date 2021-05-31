@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组实战2</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 定义一个函数，对数组进行去重
+    function uniq(arr) {
+        // 声明一个数组,存储没有重复的元素
+        var result = [];
+
+        // 循环遍历数组
+        for (var i = 0; i < arr.length; i++) {
+            if (result.indexOf(arr[i]) == -1) {
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    }
+
+    var result = uniq([1, 2, 2, 2, 3, 4, 5, 5, 5, 5]);
+    console.log(result);
+</script>

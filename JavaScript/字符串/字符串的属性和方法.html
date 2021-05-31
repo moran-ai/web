@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串的属性和方法</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * length属性：获取到字符串总字符的个数
+    * */
+    var str = "afasfdas";
+    console.log(str.length);
+    console.log("=========================");
+    for (var i = 0; i < str.length; i++) {
+        console.log(str[i]);
+    }
+    console.log("---------------------------");
+</script>
+
+<script>
+    /*
+    * toLowerCase:将字符串中英文字母变为小写
+    * toUpperCase：将字符串中英文字母变为大写
+    * */
+    var str = "asdfggeatasf";
+    var new_str = str.toUpperCase();
+    var newStr = str.toLowerCase();
+    console.log(new_str);
+    console.log(newStr);
+</script>
+
+<script>
+    /*
+    * search:获取字符的索引值
+    * split:可以通过某一个字符，将字符串切割为一个数组
+    * */
+    var str = "tywreqfsfa";
+    console.log(str.search("e"));  // 返回e的索引值  4
+
+    console.log(str.split("q"));  // 返回一个新的数组
+    console.log(str.split(""));
+</script>
+
+<script>
+    /*
+    *  substring: 在父串当中切割出一个子串  substring(起始索引值, 结束索引值)
+    *       包含起始索引值，不包含结束索引值
+    *  substr：从父串当中切割出一个子串
+    *       substr(起始位置,切割长度);
+    * */
+    var str = "adsfasdfasfasfasfsadfsa";
+    console.log(str.substring(5, 10));
+
+    var newStr = str.substr(5,8);
+    console.log(newStr);
+    console.log("_________________________________________");
+</script>
+
+<script>
+    /*
+    * replace:替换某一个字符串中符合条件的字符进行替换
+    * match:将字符串中符合条件的第一个字符返回
+    * */
+    var str = "rtete565768gsfdsdafdas";
+    var str1 = str.replace("r", 1233);
+    console.log(str1);
+
+    var newStr = str.match("t");
+    console.log(newStr);
+</script>

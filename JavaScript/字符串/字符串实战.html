@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串实战</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 定义一个函数，对传递进来的字符串进行倒置
+    function rev(str) {
+        var result = "";
+        for (var i = str.length - 1; i >= 0; i--) {
+            result += str[i];
+        }
+        return result;
+    }
+
+    var newStr = rev("1234567");
+    console.log(newStr);
+    console.log("---------------------------------");
+
+    function fun1(str) {
+        var newStr = str.split("");
+        var result = newStr.reverse();
+        result = result.join("");
+        return result;
+    }
+
+    var result = fun1("456666667789");
+    console.log(result);
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则修饰符</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * 修饰符：
+    *       g: 全局匹配
+    *       i: 大小写不敏感匹配
+    * */
+    var url = "https://www.baidu.com";
+    var arr = url.match(/[a-z]+/g);
+    console.log(arr);
+
+    var url_ = "hTTps://wWW.Xin.Com";
+    var arr_ = url_.match(/[a-z]+/ig);
+    console.log(arr_);
+</script>

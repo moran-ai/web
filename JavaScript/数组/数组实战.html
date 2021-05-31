@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组实战</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 声明一个函数,数组输出这样的形似
+    /*
+    *  [5,1,2,3,4]
+    *  [4,5,1,2,3]
+    * */
+    function fun(arr, n) {
+        for (var i = 0; i <= n; i++) {
+            var result = arr.pop();  // 数组尾部移除一个元素
+            arr.unshift(result);     // 数组头部添加一个或者多个元素
+            // console.log(arr);
+        }
+        // 返回新的数组
+        return arr;
+    }
+
+    var new_result = fun([1, 2, 3, 4, 5], 3);
+    console.log(new_result);
+</script>

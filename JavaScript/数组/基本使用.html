@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的基本使用</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // js使用[]表示数组
+    console.log([]);
+    console.log(typeof []);
+
+    // 数组中可以存储任意类型的数据
+    // 可以将数组赋值给变量
+    var arr = ["哈哈", 3, 6, 7];
+    console.log(arr);
+
+    var arr1 = [true, "1", 1, 2, 3, 4];
+
+    // 读取数据:可以使用枚举法获取数据里的元素 元素的索引越界，程序不会报错，返回undefined
+    console.log(arr1[1]);
+
+    // 修改数据
+    arr1[1] = "号";
+    console.log(arr1);
+
+    // 添加数据
+    arr1[5] = false;
+    console.log(arr1);
+</script>

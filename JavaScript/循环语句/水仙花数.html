@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水仙花数</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    for (var i = 100; i < 1000; i++) {
+        // console.log(i);
+        var ge = i % 10;
+        // console.log(ge);
+        var shi = parseInt(i / 10) % 10;
+        // console.log(shi);
+        var bai = parseInt(i / 100);
+        // console.log(bai);
+        var result = Math.pow(ge, 3) + Math.pow(shi, 3) + Math.pow(bai, 3);
+        if (result==i){
+            console.log(i);
+        }
+    }
+</script>

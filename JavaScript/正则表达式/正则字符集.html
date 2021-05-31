@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则字符集</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    *   简单类：把多个字符聚集在一起进行匹配，只能匹配某一个符合条件字符
+    *
+    * */
+    var str = "asdfaertyhfjakof";
+    var arr = str.match(/[asd]er/g)
+    console.log(arr);
+    console.log("-------------------------------");
+</script>
+
+<script>
+    /*
+    * 范围类:有时匹配的东西过多，类型又相同，全部输入太麻烦，可以在中间加个横线
+    * [0-9]  [A-Z]  [a-z]
+    * */
+    var str = "123456709哈哈哈，哈哈wc4564543543";
+    var arr = str.match(/[0-9]+/g);
+    console.log(arr);
+</script>
+
+<script>
+    /*
+    * 组合类：将多个范围类放在一起进行匹配
+    * */
+    var str = "A3455adfsafsadfas45456fdasf45FASFGSADFASF";
+    var arr = str.match(/[A-Za-z0-9]+/)
+    console.log(arr);
+</script>

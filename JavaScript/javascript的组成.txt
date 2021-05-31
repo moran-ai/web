@@ -1,0 +1,4 @@
+JavaScript组成：
+    ① ECMAScript:欧洲计算机协会，大概每年六月份中旬定制语法规范
+    ② DOM:全称Document Object Model  中文全称：文档对象模型
+    ③ BOM：全称Browser Object Model  中文全称：浏览器对象模型

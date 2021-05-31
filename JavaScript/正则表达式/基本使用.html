@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式基本使用</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * 正则表达式【RegExp】
+    * 正则表达式书写的时候是由//,这两个//称为定界符 属于引用数据类型
+    * */
+    // 字符串split方法结合正则表达式使用
+    var str = "ert rtt     tyyuuu    yyy";
+    var arr = str.split(/\s+/);  // \s 一个空格  +多个
+    console.log(arr);
+</script>
+
+<script>
+    var str = "aaaabbbbbaaaaabbbccccdddddddddd";
+    var arr = str.split(/a+/);
+    console.log(arr);
+</script>
+
+<script>
+    /*
+    * match:字符串方法，获取第一个符合条件的字符，并返回一个数组
+    * 结合正则使用
+    * */
+    var str = "哈哈哈哈好啊好";
+    console.log(str.match(/好/g))  // 匹配所有的好  g:修饰符，全局匹配  glob的简写
+</script>
+
+<script>
+    /*
+    * search:属于字符串方法，获取第一个满足条件的索引值
+    * 结合正则使用
+    * */
+    var str = "adsafsadfs哈哈";
+    console.log(str.search(/哈哈/));
+</script>
+
+
+<script>
+    /*
+    *
+    * replace 进行符合条件的字符串的替换
+    * 结合正则使用
+    * */
+    var str = "爱得发疯阿斯顿发射点发射点范德萨";
+    console.log(str.replace(/发/g, "fa"));   // 将所有的发替换为fa
+    console.log("-----------------------------");
+</script>
+
+<script>
+    /*
+    * 正则表达式的方法：
+    * exec:在目标字符串中执行一次匹配 返回一个数组
+    * test: 检测正则表达式当中的数据是否在目标字符串中 有返回true 否则返回false
+    * */
+    var str = "aaaabccccc";
+    var reg = /abc/;
+    console.log(reg.exec(str));  // 返回一个数组
+    console.log("-----------==================");
+    var str1 = "adfasdfsadfsfert8ew945ew4-859u";
+    var reg1 = /zz/
+    console.log(reg1.test(str1));
+
+</script>
