@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		 相对定位
+		 相对元素自身所在的位置进行定位
+		 可以设置left,right,bottom,top四个属性
+		 效果：在进行相对定位的后，元素原来所在的位置被保留了，被占用了  其他元素的位置不会发生改变
+		 一般情况下，left和right不会同时使用，bottom和top不会同时使用,选择一个方向即可
+		 优先级：左上>右下
+		 -->
+		 <!-- 
+		  相对定位的应用场景：
+			① 元素在小范围内移动使用
+			② 结合绝对定位使用
+		  -->
+		  <!-- 
+		   属性:z-index
+		   设置堆叠顺序，设置元素谁上谁下
+		   注意：z-index要设置在定位的元素上
+		   -->
+		<div style="width: 500px;height: 500px; background-color: aliceblue;">
+			<div style="width: 100px; height: 100px; background-color: aqua;position: relative;left: 10px;z-index: 50;"></div>
+			<div style="width: 100px; height: 100px; background-color: yellow; position: relative;bottom: 10px;right: 20px;z-index: 10;"></div>
+			<div style="width: 100px; height: 100px; background-color: pink;"></div>
+		</div>
+	</body>
+</html>
