@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>操作节点的文本</title>
+	</head>
+	<body>
+		<p id="cur">
+			哈哈哈哈
+		</p>
+		<p>
+			<input type="text" name="" id="content" value="moren" />
+		</p>
+	</body>
+</html>
+<script type="text/javascript">
+	/* 
+	分为两种情况:
+		① 操作表单元素，需要通过value属性进行操作
+		② 操作非表单元素(不是input标签即可)，需要通过innerHTML属性进行操作
+	 */
+	// 操作非表单元素
+	var p =document.getElementById("cur");
+	// 获取文本
+	console.log(p.innerHTML);
+	
+	// 修改文本
+	p.innerHTML="hahhahahaa";
+	
+	// 操作表单元素
+	var input = document.getElementById("content");
+	// 获取表单元素的文本
+	console.log(input.value);
+	
+	// 设置表单元素的文本
+	input.value = "设置表单元素的文本";
+</script>

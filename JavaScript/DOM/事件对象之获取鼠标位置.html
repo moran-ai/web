@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取鼠标位置</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+        }
+
+        .outer {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+            position: fixed;
+            left: 35%;
+            top: 20%;
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+<div class="outer" id="u">
+    <div class="inner"></div>
+</div>
+</body>
+</html>
+<script>
+    /*
+     * screenX和screenY：两者是事件对象属性，主要可以获取鼠标位置。
+     * 获取鼠标位置零零点在【电脑屏幕左上角】
+     *
+     * pageX和pageY:两者是事件对象属性，主要可以获取鼠标位置 获取鼠标位置零零点在网页主体部分左上角
+     * 零零点会随着滚动条滚动而移上去
+     *
+     * clientX和clientY：两者是事件属性，主要获取鼠标位置，获取鼠标位置零零点在可视区域左上角
+     *
+     * offsetX和offsetY:两者是事件属性，主要获取鼠标位置，类似于pageX和pageY，但是鼠标位置零零点
+     *  会受到子元素坐标体系的影响，既鼠标放在那个位置上，零零点就是该位置的左上角
+     * */
+    var inn = document.querySelector(".inner");
+    // 鼠标在整个页面中进行移动
+    document.onmousemove = function (event) {
+        // console.log(event);
+        // 短路操作解决浏览器兼容问题
+        var e = event || window.event;
+        // 零零点电脑屏幕左上角
+        inn.innerHTML = "screenX=" + e.screenX + ", " + "screenY=" + e.screenY + "<br/>";
+        // 零零点网页主体左上角  零零点会随着滚动条滚动而移上去
+        inn.innerHTML += "pageX=" + e.pageX + ", " + "pageY=" + e.pageY + "<br/>";
+        // 零零点可视区域左上角
+        inn.innerHTML += "clientX=" + e.clientX + ", " + "clientY=" + e.clientY + "<br/>";
+        // 鼠标位于那个元素上，零零点就在该元素的左上角
+        inn.innerHTML += "offsetX=" + e.offsetX + ", " + "offsetY=" + e.offsetY + "<br/>";
+    }
+</script>

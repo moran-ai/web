@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝二级菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            height: 400px;
+            /*color: #EFEFEF;*/
+            margin: 30px auto;
+            border: 1px solid black;
+        }
+
+        .container div {
+            float: left;
+        }
+
+
+        #left {
+            width: 20%;
+            height: 100%;
+            border-right: 1px solid black;
+        }
+
+        #right {
+            width: 79%;
+            height: 100%;
+            /*border-left: 1px solid black;*/
+            /*display: none; !*隐藏元素*!*/
+        }
+
+        #left ul {
+            width: 100%;
+            list-style: none;
+        }
+
+        #left ul li {
+            text-align: center;
+            height: 30px;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="left">
+        <ul>
+            <li>女装 / 内衣 / 家居</li>
+            <li>女鞋 / 男鞋 / 箱包</li>
+            <li>母婴 / 童装 / 玩具</li>
+            <li>男装 / 运动户外</li>
+            <li>美妆 / 彩妆 / 个护</li>
+            <li>手机 / 数码 / 企业</li>
+        </ul>
+    </div>
+    <div id="right">购买的商品</div>
+</div>
+</body>
+</html>
+<script>
+    // 获取所有的li标签
+    var liArr = document.getElementsByTagName("li");
+    // 获取右侧div
+    var rt = document.getElementById("right");
+    for (var i = 0; i < liArr.length; i++) {
+        // 批量添加样式，定义一个IIFE
+        +function (index) {
+            // 添加鼠标进入事件，选中的li颜色改变
+            liArr[index].onmouseenter = function () {
+                // 先让所有的li恢复初始状态的颜色
+                for (var j = 0; j < liArr.length; j++) {
+                    liArr[j].style.color = "black";
+                }
+                // 选中的li颜色改变
+                liArr[index].style.color = "pink";
+
+                // 右侧内容展示
+                rt.style.display = "black";
+                rt.innerHTML = "购买的物品是" + index;
+            }
+        }(i);
+    }
+</script>

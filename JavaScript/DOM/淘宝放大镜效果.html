@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>淘宝放大镜效果</title>
+		<style>
+			/*清除整个页面多余的样式*/
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.outer {
+				position: relative;
+				/*相对定位*/
+				width: 800px;
+				height: 600px;
+				background-image: url("img/7.png");
+				/*设置背景图*/
+				background-size: 800px 600px;
+				/*背景图的大小*/
+			}
+
+			.sal {
+				position: absolute;
+				/*绝对定位*/
+				width: 300px;
+				height: 300px;
+				background-color: skyblue;
+				opacity: .3;
+				/* 透明度  0~1之间*/
+			}
+
+			.small {
+				position: absolute;
+				/* 绝对定位*/
+				width: 300px;
+				height: 300px;
+				right: -420px;
+				top: 0;
+				/* background-image: url("img/7.png"); */
+				background-size: 800px 600px;
+				/*让元素样式放大*/
+				transform: scale(1.8);
+				/* 放大1.8倍*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outer">
+			<div class="sal"></div>
+			<div class="small"></div>
+		</div>
+	</body>
+</html>
+<script>
+	// 获取div类名为sal的节点
+	var sal = document.querySelector(".sal");
+	// 获取div类名为small的节点
+	var small = document.querySelector(".small");
+	// small.style.backgroundImage="none";
+	// 添加鼠标按下事件
+	sal.onmousedown = function(event) {
+		// 短路操作解决浏览器兼容问题
+		var e = event || window.event;
+		var startX = e.offsetX;
+		var startY = e.offsetY;
+		// 添加鼠标移动事件
+		document.onmousemove = function(event1) {
+			var e = event1 || window.event;
+			// 求出left和top的值
+			var l = e.clientX - startX;
+			var r = e.clientY - startY;
+			// 如果if语句后面只有一条语句，{}可省
+			// 如果left值小于0，则值恒等于0
+			if (l <= 0) l = 0;
+			// 如果left值大于700，则值恒等于700
+			if (l >= 500) l = 500;
+			// 如果top的值小于0，则值恒等于0
+			if (r <= 0) r = 0;
+			// 如果top的值大于700，则值恒等于700
+			if (r >= 300) r = 300;
+			// 设置内部盒子的左侧和顶部
+			sal.style.left = l + "px";
+			sal.style.top = r + "px";
+
+			// 设置背景图
+			small.style.backgroundImage = "url(./img/7.png)";
+			//修改小图背景图定位
+			small.style.backgroundPosition = "-" + l + "px -" + r + "px";
+		}
+
+		// 添加鼠标抬起事件
+		document.onmouseup = function(event) {
+			document.onmousemove = null;
+			// small.style.backgroundImage = "none";
+			var e = event || window.event;
+			var l = e.clientX - startX;
+			var r = e.clientY - startY;
+			if (l < 0 || l > 600) {
+				small.style.backgroundImage = "none";
+			}
+			if (r < 0 || r > 600) {
+				small.style.backgroundImage = "none";
+			}
+		}
+	}
+</script>

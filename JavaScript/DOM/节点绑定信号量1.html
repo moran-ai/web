@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            border: 1px solid pink;
+        }
+
+        img {
+            width: 400px;
+            height: 300px;
+        }
+
+        #lbtn {
+            position: absolute;
+            width: 30px;
+            height: 20px;
+            left: 0;
+            top: 140px;
+        }
+
+        #rbtn {
+            position: absolute;
+            width: 30px;
+            height: 20px;
+            right: 0;
+            top: 140px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button id="lbtn">&lt;</button>
+    <img src="img/0.jpg" alt="" id="img">
+    <button id="rbtn">&gt;</button>
+</div>
+</body>
+</html>
+<script>
+    // 获取左边节点
+    var lbtn = document.getElementById("lbtn");
+    // 获取右边节点
+    var rbtn = document.getElementById("rbtn");
+
+    // 获取图片节点
+    var img = document.getElementById("img");
+
+    // 创建一个信号量
+    var idx = 0;
+
+    // 左边节点绑定事件
+    lbtn.onclick = function () {
+        idx++;
+        // 如果idx大于3，值为0，否则idx的值为当前idx的值
+        idx = idx > 3 ? 0 : idx;
+        img.src = "img/" + idx + ".jpg";
+    }
+
+    // 右边节点绑定事件
+    rbtn.onclick = function () {
+        idx--;
+        idx = idx < 0 ? 3 : idx;
+        img.src = "img/" + idx + ".jpg";
+    }
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝特效制作</title>
+    <style>
+        div {
+            width: 520px;
+            height: 570px;
+            margin: 100px auto;
+            /*border:2px solid orange;*/
+        }
+
+        .c {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        img {
+            height: 500px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img src="img/5.png" alt="">
+    <p class="c">￥398.00</p>
+</div>
+</body>
+</html>
+<script>
+    /*
+    *  鼠标进入事件：
+    *       onmouseenter
+    *       onmouseover
+    *  鼠标移除事件
+    *       onmouseleave
+    *       onmouseout
+    * */
+    var div = document.getElementById("box");
+    // 鼠标进入出现边框
+    div.onmouseenter = function () {
+        div.style.border = "2px solid orange";
+    }
+
+    // 鼠标移除边框消失
+    div.onmouseleave = function () {
+        div.style.border = "none";
+    }
+</script>

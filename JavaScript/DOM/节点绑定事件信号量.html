@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>节点信号量</title>
+		<style type="text/css">
+			/*清除页面所有默认样式*/
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			#box {
+				width: 500px;
+				height: 300px;
+				border: 1px solid pink;
+				/* 外边框 */
+				color: #FF0000;
+				text-align: center;
+				line-height: 250px;
+				/* 水平居中 */
+				margin: 100px auto;
+				/* 上下100  左右自适应*/
+				background-color: antiquewhite;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="box">哈哈哈哈</p>
+	</body>
+</html>
+<script type="text/javascript">
+	var p = document.getElementById("box");
+	// 创建一个信号量
+	var sum = 12; // 字体大小默认是12
+	p.onclick = function() {
+		sum++;
+		// 设置字体的最大大小为30
+		if (sum >= 30) {
+			sum = 30;
+		}
+		// 改变字体大小
+		p.style.fontSize = sum + "px";
+	}
+</script>

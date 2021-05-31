@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量添加事件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            float: left;
+            padding: 20px;
+        }
+
+        ul {
+            width: 100%;
+            height: 60px;
+            list-style: none;
+            background-color: #EFEFEF;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>军事</li>
+    <li>游戏</li>
+    <li>财经</li>
+    <li>体育</li>
+    <li>新闻</li>
+</ul>
+</body>
+</html>
+<script>
+    /*
+    *  在特定的场景下，有很多相同的标签或者节点，需要添加相同的事件，可以批量添加事件
+    * */
+    var liArr = document.getElementsByTagName("li");
+    for (var i = 0; i < liArr.length; i++) {
+    // console.log(liArr[i]);
+    // 批量绑定事件
+    liArr[i].onclick = function () {
+        // 定义一个IIFE，用来独立每一个元素的值
+    //     +function (index) {
+    //         console.log(liArr[index]);
+    //     }();
+    // }
+    // 使用IIFE，用来独立每一个元素的值
+        +function (index) {
+            liArr[index].onclick = function () {
+                liArr[index].style.color = "red";
+            }
+        }(i);
+    }
+    console.log("循环语句结束" + i);  // 5
+</script>
+
+<script>
+    // 使用this
+    var li = document.getElementsByTagName("li");
+    for (var i = 0; i < li.length; i++) {
+        li[i].onclick =function () {
+            this.style.color = "red";
+        }
+    }
+</script>

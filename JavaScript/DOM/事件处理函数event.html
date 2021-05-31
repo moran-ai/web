@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件处理函数event</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script>
+    // event对象
+    // 获取div标签
+    var div = document.querySelector("div");
+    div.onclick =function (event) {
+        console.log(event);
+        /*
+        事件函数执行时，系统自动注入实参，用形参接收【事件对象】
+        考虑浏览器的兼容性：
+        *   高级浏览器：谷歌,IE8以上的浏览器--->事件对象返回event
+        *   低级浏览器：IE8以下的浏览器--->事件对象作为BOM对象属性
+        * */
+        var e = event||window.event;
+        console.log(e);
+    }
+</script>

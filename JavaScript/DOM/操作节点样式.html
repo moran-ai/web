@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>操作节点样式</title>
+		<!-- 内部样式 -->
+		<style type="text/css">
+			/* 清楚默认样式 */
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.content {
+				color: #00FFFF;
+				border: 1px solid red;
+				text-align: center;
+				line-height: 200px;
+				font-size: 20px;
+				font-weight: 2px;
+				/* 文字加粗*/
+			}
+		</style>
+	</head>
+	<body>
+		<div style="width: 100px;height: 100px;color: #FF0000;background-color: firebrick;">
+			哈哈hahh
+		</div>
+		<p class="content">
+			哈哈
+		</p>
+		<span id="b" style="width: 100px;height: 100px;color: red;background-color: #00FFFF;">
+			操作行内样式
+		</span>
+	</body>
+</html>
+<script type="text/javascript">
+	/* 
+	操作行内样式 
+	 */
+	// 获取节点
+	var sapn = document.getElementById("b");
+	console.log(sapn.style);
+	
+	// 获取行内样式
+	console.log(sapn.style.width);
+	console.log(sapn.style.height);
+	console.log(sapn.style.color);
+
+	// 设置行内样式
+	sapn.style.width = "200px";
+	sapn.style.height = "200px";
+	sapn.style.color = "pink";
+	sapn.style.backgroundColor = "red";
+</script>

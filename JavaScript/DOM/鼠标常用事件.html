@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标常用事件</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+
+        button {
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="bt">
+    <button></button>
+</div>
+</body>
+</html>
+<script>
+    /*
+        onmousedown()   鼠标按下事件
+        onmousemove()   鼠标移动事件
+        onmouseup()     鼠标抬起事件
+    * */
+    // 鼠标按下事件
+    document.onmousedown = function () {
+        document.body.style.background = "pink";
+    }
+
+    // var bo = document.getElementById("bt");
+    // bo.onmousedown = function () {
+    //     bo.style.backgroundColor = "green";
+    // }
+
+    // 鼠标移动事件
+    document.onmousemove = function () {
+        var R = Math.random() * 255;
+        var G = Math.random() * 255;
+        var B = Math.random() * 255;
+        document.body.style.background = "rgb(" + R + "," + G + "," + B + ")";
+    }
+
+    // 鼠标抬起事件
+    document.onmouseup = function () {
+        document.body.style.background = "white";
+    }
+</script>

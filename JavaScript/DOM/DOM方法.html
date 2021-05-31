@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 清除所有样式的空格，间距 */
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			#box {
+				color: red;
+				/* 文字的缩进*/
+				text-indent: 2em;
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			哈哈啊
+		</div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li id="me">4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	/* 
+	getElementById:可以通过标签的ID选择器，在js中获取标签 
+	可以获取到节点树上任意的节点，需要给节点添加id
+	 */
+	var element = document.getElementById("box");
+	console.log(element);
+	
+	var me = document.getElementById("me");
+	console.log(me);
+</script>

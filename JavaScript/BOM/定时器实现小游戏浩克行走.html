@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器实现游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: absolute;
+            width: 30px;
+            height: 50px;
+            background-image: url("img/1.png");
+            /*background-position: -90px -100px;*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+<script>
+    // 游戏素材：https://www.aigei.com/
+    var div = document.querySelector("div");
+    // 定义一个信号量
+    var l = 0;
+    var step = 0;
+    var isMove = false;
+    // 定时器
+    setInterval(function () {
+        // 如果isMove的值为false，停止
+        if (isMove) return ;
+        step++;
+        l += 10;
+        if (step > 3) step = 0;
+        div.style.backgroundPosition = "-" + step * 30 + "px -100px";
+        div.style.left = l + "px";
+    }, 500)
+
+    // clearInterval(1);
+    // 绑定单击事件
+    div.onclick = function () {
+        isMove = !isMove;  // 置反操作  控制小人的行走
+    }
+</script>

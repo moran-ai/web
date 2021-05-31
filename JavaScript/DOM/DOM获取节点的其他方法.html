@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取节点的其他方法</title>
+</head>
+<body>
+<ul>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li class="n">哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li class="n">哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li class="n">哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+</ul>
+</body>
+</html>
+<script>
+    /*
+    *  getElementsByTagName:通过标签名获取节点，方法返回的是类数组
+    *  getElementsByClassName:通过标签的class属性获取节点  返回类数组
+    *  querySelector:通过任意的选择器获取节点
+    *
+    * */
+    // getElementsByTagName:通过标签名获取节点，方法返回的是类数组
+    var arr = document.getElementsByTagName("li");
+    console.log(arr.length);   // 类数组
+    console.log(Array.isArray(arr)); // false 不是数组
+    for (var i = 0; i < arr.length; i++) {
+        // console.log(arr[i]);
+        arr[i].style.color = "pink";
+    }
+</script>
+
+<script>
+    // getElementsByClassName:通过标签的class属性获取节点  返回类数组
+    var elelist = document.getElementsByClassName("n");
+    for (var i = 0; i < elelist.length; i++) {
+        // console.log(elelist[i]);
+        elelist[i].style.backgroundColor = "red";
+    }
+</script>
+
+<script>
+    // querySelector:通过任意的选择器获取节点  获取第一个节点
+    var ele = document.querySelector("li");  // 返回第一个获取的节点
+    console.log(ele);
+    ele.style.color="green";
+</script>

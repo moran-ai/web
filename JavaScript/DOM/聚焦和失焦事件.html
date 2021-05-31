@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聚焦和失焦事件</title>
+</head>
+<body>
+<p>
+    手机号：<input type="text" id="cur"><span id="sp"></span>
+</p>
+</body>
+</html>
+<script>
+    /*
+    *  一般和表单元素进行使用：
+    *   onfocus:聚焦
+    *   onblur: 失焦
+    * */
+    var input = document.getElementById("cur");
+    var span = document.getElementById("sp");
+    // 鼠标聚焦事件
+    input.onfocus = function () {
+        input.style.color = 'green';
+    }
+
+    // 鼠标失焦事件
+    input.onblur = function () {
+        // 获取输入框中的值
+        var txt = input.value;
+        // 使用正则判断手机格式是否正确
+        if (/^1[3456789]\d{9}/.test(txt) && txt.length == 11) {
+            span.style.color = "pink";
+            span.innerHTML = "";
+        } else {
+            span.style.color = "red";
+            span.innerHTML = "手机号必须为11位";
+        }
+    }
+</script>

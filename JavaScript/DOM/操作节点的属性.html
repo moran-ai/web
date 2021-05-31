@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>操作节点的属性</title>
+		<!-- 内部样式 -->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				color: #00FFFF;
+				background-color: #FF0000;
+				text-align: center;
+				width: 300px;
+				height: 500px;
+				border-radius: 50%;  /* 圆角*/
+				line-height: 500px;  /* 行高*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="cur">
+			哈哈哈哈哈哈
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	// 通过DOM操作节点的属性
+	var div = document.getElementById("box");
+	// 获取id属性
+	console.log(div.id);   // box
+	// 获取class属性
+	console.log(div.className);   // cur
+	
+	// 设置节点的属性值
+	div.id = "ememe";
+	div.className="aaaa";
+	console.log(div);
+</script> 

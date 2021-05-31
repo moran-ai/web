@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标进入和鼠标移除事件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 400px;
+            height: 200px;
+            margin: 100px auto;
+            display: block; /*框*/
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="img/1.jpg" alt="" id="img">
+</div>
+</body>
+</html>
+<script>
+    /*
+    *  onmouseenter：鼠标进入事件
+    *  onmouseleave: 鼠标移除事件
+    * */
+    // 获取节点
+    var img = document.getElementById("img");
+
+    // 鼠标进入事件
+    img.onmouseenter = function () {
+        // 修改图片
+        img.src = "img/2.jpg";
+    }
+
+    // 鼠标移除事件
+    img.onmouseleave = function () {
+        // 修改图片
+        img.src = "img/1.jpg";
+    }
+</script>
