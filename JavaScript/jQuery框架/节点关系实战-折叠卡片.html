@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>节点关系实战-折叠卡片</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				width: 600px;
+				margin: 30px auto;
+				border: 1px solid black;
+			}
+
+			.container ul {
+				list-style: none;
+			}
+
+			.container ul li {
+				border-bottom: 1px solid orange;
+			}
+
+			.container ul li h3 {
+				text-align: center;
+				cursor: pointer;
+			}
+
+			.container ul p {
+				display: none;
+			}
+
+			.container ul p.cur {
+				display: block;
+			}
+		</style>
+		<script type="text/javascript" src="js/jQuery.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li>
+					<h3>这码头总有惊人的新“魔术” 西海岸“乘风破浪”</h3>
+					<p class="cur">
+						“我们的人，都在屋里，进行实时监控。这样规模的码头，一般需要1200人左右，我们现在总共不到300人。”田昌明说，这就是全自动化码头与传统码头的区别，大大提升了作业速度、效能，使港口的作业模式更加适应新形势。
+					</p>
+				</li>
+
+				<li>
+					<h3>王毅：中方愿随时根据印方需要，向印度人民提供支持和帮助</h3>
+					<p>2021年4月27日，国务委员兼外长王毅在主持中阿巴尼斯孟六国外长合作应对新冠肺炎疫情视频会议时表示，我们这次会议也向印度发出了邀请</p>
+				</li>
+
+				<li>
+					<h3>“美舰混入辽宁舰编队”？网友：我看是美舰被包围吧</h3>
+					<p>有辽宁舰航母编队054A型导弹护卫舰、052D型导弹驱逐舰、055型导弹驱逐舰，以及901型综合补给舰。而美军伯克级驱逐舰则是从左侧位置切入、插队“混入”航母编队中，位于901型综合补给舰前方，并紧紧跟在辽宁舰后方，而901型综合补给舰则在队伍最后方。
+					</p>
+				</li>
+
+				<li>
+					<h3>美国国务院：赴美禁令解除，8月起留学生可直飞美国</h3>
+					<p>官网显示，持有有效F-1和M-1签证的学生，2021秋季学期将不再受旅行禁令的影响，可以在学期开始前的30天内乘坐直飞航班入境美国。</p>
+				</li>
+				<li>
+					<h3>泰国“杀妻骗保案”被告由无期徒刑改判死刑，已申请上诉</h3>
+					<p>普吉杀妻骗保案在泰国宣判，被告张某凡被判处无期徒刑，2020年3月23日，该案被害人家属委托律师向泰国第八区中级法院提起上诉，2021年1月7日，中级法院改判张某凡死刑，目前张某凡正在向第八区中级法院申请，请求中级法院给他机会向最高法院继续上诉
+					</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	// 给所有的h3绑定单击事件
+	$("h3").click(function() {
+		// 点击当前节点，当前节点向下滑动 父节点的兄弟节点的子节点向上卷起
+		$(this).siblings().slideDown().parent().siblings().children("p").slideUp();
+	});
+</script>

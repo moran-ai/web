@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数实战</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function isshuixianhua(num) {
+        var ge = num % 10;
+        var shi = parseInt(num / 10) % 10;
+        var bai = parseInt(num / 100);
+        var result = Math.pow(ge, 3) + Math.pow(shi, 3) + Math.pow(bai, 3);
+        // console.log(result);
+        if (result == num) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // var result = isshuixianhua(153);
+
+    // console.log(result);
+
+    function fun1(num) {
+        // 定义一个计数器
+        var sum = 0;
+        for (var i = 1; i < num; i++) {
+            if (num % i == 0) {
+                sum += i; // 计算余数之和
+            }
+        }
+        // console.log(sum);
+        // 如果商的和等于数字本身
+        if (sum == num) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // 执行函数
+    for (var k = 1; k <= 1000; k+=1) {
+        if (fun1(k)) {
+            console.log(k + '是完美数字');
+        }
+    }
+</script>

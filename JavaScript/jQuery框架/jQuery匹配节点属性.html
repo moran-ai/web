@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery匹配节点属性</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			img {
+				width: 400px;
+				height: 400px;
+			}
+		</style>
+		<script src="js/jQuery.min.js"></script>
+	</head>
+	<body>
+		<input type="text">
+		<input type="radio">
+		<input type="checkbox">
+		<img src="img/0.jpg" alt="">
+	</body>
+</html>
+<script>
+	/*
+	 *  attr:获取设置节点属性值
+	 * */
+	// 获取属性值
+	console.log($("input:eq(1)").attr("type"));
+
+	// 修改属性值
+	$("input:eq(1)").attr("type", "text");
+
+	// 获取图片属性值
+	console.log($("img").attr("src"));
+
+	// 修改图片属性值
+	$("img").attr("src", "img/2.jpg");
+</script>

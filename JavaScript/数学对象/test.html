@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+ </head>
+ <body>
+ </body>
+</html>
+<!-- <script type="text/javascript">
+    //全局变量:除了函数形参、函数体中声明局部变量以外，都是全局变量
+    //全局变量可以在JS行为层中任意地方使用
+    for(var m = 0; m < 3 ; m ++){
+      console.log(m);
+    }
+    console.log("我是循环体外部",m);
+</script> -->
+<script type="text/javascript">
+   //声明
+   function isNarcissus (num){
+      //获取当前这个数字个、十、白
+      var ge = num % 10,shi = parseInt(num / 10)%10,bai = parseInt(num / 100);
+      //获取到当前这个数字个、十、白立方和
+      var result = Math.pow(ge,3) + Math.pow(shi,3) + Math.pow(bai,3);
+      //判断是不是水仙花数字
+      if(result == num){
+        return true;
+      }else{
+        return false; 
+      }   
+   }
+   //调用
+   for(var n=100;n<999;n++){
+       var bol4=isNarcissus(n);
+       if(bol4){
+        console.log(n+"是水仙花数");
+       }
+   }
+</script>
+    

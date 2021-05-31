@@ -1,0 +1,17 @@
+小手：                  cursor: pointer;
+溢出隐藏：               overflow: hidden;
+元素放大效果：           transform: scale(1.8);
+透明度：                 opacity: .3;
+去除列表前的样式：        list-style: none;
+
+清除页面中的多余的样式：
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+隐藏元素： display: none;
+显示元素： display: block;
+圆角  border-radius: 10px 10px 10px 10px; 
+margin  外边距
+padding  内边距

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类数组对象arguments</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * 函数体中拥有一个引用数据类型arguments【类数组对象】
+    * 类数组对象不是数组，只能使用数组的length属性，不能使用方法
+    * 存在意义：
+    *   在函数没有形参的情况下，在函数体中可以获取到传递给函数的实参
+    * */
+    function fun() {
+        console.log(arguments);
+        for (var i = 0; i < arguments.length; i++) {
+            console.log(i);
+        }
+    }
+
+    fun(1, 2, 3, 4, 5, 6);
+</script>

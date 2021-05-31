@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery节点关系</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            width: 100%;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        li{
+            height:78px;
+            float: left;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+    <script src="js/jQuery.min.js"></script>
+</head>
+<body>
+<div>
+    <ul>
+        <li>啊打法师f</li>
+        <li>fasdfa</li>
+        <li>adsdf</li>
+        <li>fdsfsadf</li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    /*
+    *       parent:获取到某一个匹配节点的父节点
+    * */
+    // console.log($("li").parent());
+    $("li").parent().css({"color": "red", "backgroundColor": "pink"})  // 返回ul
+</script>
+
+<script>
+    /*
+    *  this:上下文  当前触发这个事件的元素
+    * */
+    $("li").click(function () {
+        $(this).css({"background": "red"})
+    });
+</script>

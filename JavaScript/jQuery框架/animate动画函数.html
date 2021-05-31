@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>animate动画函数</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			div {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript" src="js/jQuery.min.js"></script>
+	</head>
+	<body>
+		<div>哈哈哈</div>
+	</body>
+</html>
+<script type="text/javascript">
+	/* 
+		语法格式：	
+			$(selector).animate(json, time, callback);
+			第一个参数【必有】：JSON格式用来设置动画最终完成的样式属性值
+			第二个参数【可有可无】:动画时间的设置 单位毫秒
+			第三个参数【可有可无】:当动画执行完毕后立即执行一次
+		注意：
+			animate函数很多属性都支持，但是颜色属性不支持
+	 */
+	$("div").animate({
+		"left": 700,
+		"width": 400,
+		"top": 200
+	}, 2000);
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * 闭包：即为一个可以访问其他作用域中的变量，这样的函数即为闭包
+    * */
+    var num = 100;
+
+    function func() {
+        num++;
+        console.log(num);
+    }
+
+    func();
+</script>
+
+<script>
+    function func(x) {
+        console.log("这是外部函数");
+        // 内部函数
+        function inner(y) {
+            console.log("内部函数执行");
+            console.log(x + y);
+        }
+
+        inner(200);
+    }
+
+    func(100);
+</script>

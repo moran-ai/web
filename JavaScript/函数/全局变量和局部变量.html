@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局变量和局部变量</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * 局部变量
+    *   ① 作为函数的形参
+    *   ② 变量在函数体内声明
+    * 全局变量
+    *   除了局部变量以外的部分就是全局变量
+    * */
+    function isEven(num) {
+        if (num % 2 == 0) {
+            console.log(num + '是偶数');
+        }
+    }
+
+    isEven(2);
+</script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传统轮播图</title>
+    <link rel="stylesheet" href="css/default.css">
+    <script src="js/jQuery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <ul>
+        <li class="cur"><img src="img/0.jpg" alt=""></li>
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+    </ul>
+    <button class="lbtn">&lt;</button>
+    <button class="rbtn">&gt;</button>
+    <ol>
+        <li class="show">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+</div>
+</body>
+</html>
+<script>
+    // 定义一个信号量
+    var index = 0;
+
+    // 给左侧按钮绑定单击事件
+    $(".lbtn").click(function () {
+        // 当前展示的图片
+        $("li:eq(" + index + ")").css({"left": 0}).stop(true).animate({"left": -600}, 500);
+        index++;
+        index = index > 4 ? 0 : index;
+        // 下一张展示的图片
+        $("li:eq(" + index + ")").css({"left": 600}).stop(true).animate({"left": 0}, 500);
+
+        // 小球的颜色改变  将兄弟节点的颜色去掉
+        $("ol li:eq(" + index + ")").addClass("show").siblings().removeClass("show");
+    });
+
+    // 右侧按钮绑定单击事件
+    $(".rbtn").click(function () {
+        // 当前展示的图片
+        $("li:eq(" + index + ")").css({"left": 0}).stop(true).animate({"left": 600});
+        index--;
+        index = index < 0 ? 4 : index;
+
+        // 下一张图片  当前图片的小球展示 兄弟节点的小球不展示
+        $("li:eq(" + index + ")").css({"left": -600}).stop(true).animate({"left": 0});
+
+        // 小球的颜色
+        $("ol li:eq(" + index + ")").addClass("show").siblings().removeClass("show");
+    });
+
+    setInterval(
+        function () {
+            // 当前展示的图片
+            $("li:eq(" + index + ")").css({"left": 0}).stop(true).animate({"left": -600}, 500);
+            index++;
+            index = index > 4 ? 0 : index;
+            // 下一张展示的图片
+            $("li:eq(" + index + ")").css({"left": 600}).stop(true).animate({"left": 0}, 500);
+
+            // 小球的颜色改变  将兄弟节点的颜色去掉
+            $("ol li:eq(" + index + ")").addClass("show").siblings().removeClass("show");
+        }, 5000
+    );
+</script>

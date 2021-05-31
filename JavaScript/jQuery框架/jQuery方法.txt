@@ -1,0 +1,78 @@
+类名操作：
+    addClass:  给匹配的节点添加元素
+        $("div").addClass("bobxxx");  给div添加类名bobxxx
+    removeClass: 给匹配的节点移除元素
+        $("div").removeClass("bobxxx"); 给div移除类名bobxxx
+	index:获取匹配节点的索引值
+		console.log($(".cur").index());
+	each:遍历全部匹配的节点  each(callback) 里面有一个回调函数
+							该回调函数有两个参数，一个是节点的索引值，一个是节点
+		$("li").each(function (index, element) {
+		    // index:索引值
+		    // element:匹配的节点
+		    console.log(index, element);
+		    $(element).css({"color": "red", "width": "100"});
+		});
+
+特效函数:
+    原理:动态修改高度
+    slideDown：向下滑动  slideDown(time, callback)
+            第一个参数：代表每一次动画时间 【可有可无】
+            第二个参数：回调函数 动画结束后立即执行一次 【可有可无】
+
+    slideUp：向上卷起
+
+    原理:动态修改透明度
+    fadeOut: 淡出
+    fadeout(time, callback)
+            第一个参数：动画每一次需要的时间 单位毫秒  【可有可无】
+            第二个参数：回调函数        【可有可无】
+    fadeIn:	 淡入
+
+节点文本：
+	非表单元素的文本：html()
+	表达元素的文本：val()
+	【可以对节点的文本进行获取和设置】
+	
+节点属性：
+	attr:获取节点的属性值，也可以修改节点的属性值
+		// 获取属性值
+		console.log($("input:eq(1)").attr("type"));
+		
+		// 修改属性值
+		$("input:eq(1)").attr("type", "text");
+		
+		// 获取图片属性值
+		console.log($("img").attr("src"));
+		
+		// 修改图片属性值
+		$("img").attr("src", "img/2.jpg");
+		
+节点样式：
+	css()方法，里面传递一个json格式的数据，使用链式语法
+		$("div").css({"color": "red", "background":"cyan", "fontSize": 40});
+
+jQuery独有选择器：
+	:first:获取节点匹配的第一个元素
+	:last:获取节点匹配的第二个元素
+	:odd:匹配奇数
+	:even:匹配偶数
+	:gt(index)：获取匹配节点大于某一个索引值
+	:lt(index): 获取匹配节点小于某一个索引值
+	:eq(index): 获取匹配节点，某一个准确索引值节点
+	
+jQuery节点关系：
+	parent:获取到某一个匹配节点的父节点
+	siblings:获取兄弟姐妹节点
+	children:获取某个节点的子节点
+	this:上下文，当前的节点
+
+jQuery事件的绑定：
+	jQuery事件的绑定，没有on这个关键字
+	绑定单击事件:
+		$(selector).click(function(){
+			函数执行的内容;
+		});
+	绑定的事件有:
+		mouseenter(鼠标进入)
+		mouseleave(鼠标离开)

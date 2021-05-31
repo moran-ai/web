@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery方法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+    </style>
+    <script src="js/jQuery.min.js"></script>
+</head>
+<body>
+<button>点我~~添加类名</button>
+<button>点我~~移除类名</button>
+<button>点我~~链式语法</button>
+<div class="box"></div>
+</body>
+</html>
+<script>
+    /*
+    *   addClass      给匹配节点添加类名
+    *   removeClass   给匹配节点移除类名
+    * */
+    // 绑定添加类名事件
+    $("button:eq(0)").click(function () {
+        $("div").addClass("bobxxx");
+    });
+
+    // 绑定移除类名事件
+    $("button:eq(1)").click(function () {
+        $("div").removeClass("bobxxx");
+    });
+
+    $("button:eq(2)").click(function () {
+        $("div").css({"width": "200", "height": "400", "backgroundColor": "red", "borderRadius": "50%"})
+    });
+</script>

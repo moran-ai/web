@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包练习</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function outer() {
+        var a = 100;
+
+        function inner() {
+            a += 10;
+            console.log(a);
+        }
+
+        return inner;
+    }
+
+    var result = outer();
+    result();  // 110
+    result();  // 120
+</script>

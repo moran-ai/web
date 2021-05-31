@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQ基本使用</title>
+    <script src="js/jQuery.min.js"></script>
+</head>
+<body>
+<ol>
+    <li id="study">1</li>
+    <li class="cur">2</li>
+    <li>3</li>
+    <li class="cur">4</li>
+    <li>5</li>
+</ol>
+</body>
+</html>
+<script>
+    // jQuery对外暴露一个$函数
+    // jQuery支持很多选择器
+    // 标签选择器
+    $("li").css("color", "red");
+
+    // 类选择器
+    $(".cur").css("color", "pink");
+
+    // id选择器
+    $("#study").css("fontSize", 40);
+</script>

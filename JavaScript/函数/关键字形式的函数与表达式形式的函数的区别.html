@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关键字形式的函数与表达式形式的函数的区别</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * 表达式形式的函数与关键字形式的函数的区别：
+    *   表达式形式的函数不可以在函数声明之前进行调用
+    *   关键字形式的函数可以在函数声明之前进行调用,解析器会将函数的声明提升到当前作用域的最上方
+    * */
+    // 表达式形式的函数
+    var fun = function () {
+        console.log(100);
+    }
+    fun();
+
+    // 关键字函数
+    // isOdd(6);
+    function isOdd(num) {
+        if (num % 2 != 0) {
+            alert('这是奇数');
+        } else {
+            alert('偶数');
+        }
+    }
+    isOdd(6);
+
+</script>

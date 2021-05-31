@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>animate函数注意事项</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			div {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+			}
+		</style>
+		<script type="text/javascript" src="js/jQuery.min.js"></script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>
+<script type="text/javascript">
+	// 给一个节点绑定多个动画
+	// 第一个动画
+	$("div").animate({"left": 600}, 2000);
+	// 第二个动画
+	$("div").animate({"top": 600}, 2000);
+	// 第三个动画
+	$("div").animate({"left": 0}, 2000);
+	// 第四个动画
+	$("div").animate({"top": 0}, 2000);
+</script>

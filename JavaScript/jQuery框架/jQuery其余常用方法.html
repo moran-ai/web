@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery其余常用方法</title>
+    <script src="js/jQuery.min.js"></script>
+</head>
+<body>
+<div>
+    <li>11</li>
+    <li>11</li>
+    <li class="cur">11</li>
+    <li>22</li>
+</div>
+</body>
+</html>
+<script>
+    /*
+    *  index:获取匹配节点的索引值
+    * */
+    console.log($(".cur").index());
+</script>
+
+<script>
+    /*
+    *  each: 遍历全部匹配的节点
+    * */
+    $("li").each(function (index, element) {
+        // index:索引值
+        // element:匹配的节点
+        console.log(index, element);
+        $(element).css({"color": "red", "width": "100"});
+    });
+</script>

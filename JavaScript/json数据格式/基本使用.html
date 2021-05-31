@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json数据格式</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    *
+    * json是键值对格式
+    * 键需要加上双引号
+    * 值可以是任意数据类型
+    * */
+    var info = {
+        "name": "ene",
+        "age": 123
+    }
+
+    // 读取json数据
+    console.log(info.name);
+    console.log(info.age);
+    console.log(info["name"]);
+    console.log(info["age"]);
+
+    // 修改json数据
+    info.name="eee";
+    info["age"] = 1211;
+    console.log(info)
+
+    // json添加键值对
+    info.sex="男";
+    console.log(info);
+
+
+</script>
