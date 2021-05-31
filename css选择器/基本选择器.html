@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 选择器的优先级：id选择器>类选择器>元素选择器 */
+			/* 
+			 基本选择器：元素选择器:
+			 通过元素的名字进行定位，获取页面上所有的这个元素,无论藏得多深，都能获取到
+			 */
+			h1{
+				color: red;
+			}
+			i{
+				color: gray;
+			}
+			
+			/* 
+			 基本选择器：类选择器
+			 应用场景：不同类型的标签使用相同的类型
+			 */
+			.mycls{
+				color: pink;
+			}
+			
+			/* 基本选择器：id选择器
+			 应用场景：可以定位唯一的一个元素
+			 不同的标签可以使用相同的id，但是一般会进行控制，让id唯一定位到一个元素
+			 */
+			#myid{
+				color: bisque;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>
+			一级<i>标题</i>
+		</h1>
+		<h1 class="mycls">一级标题</h1>
+		<h2 class="mycls">二级标题</h2>
+		<h2>二级标题</h2>
+		<h2 id="myid">二级标题</h2>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="get">
+			<!-- 表单元素 -->
+			<!-- 
+			 文本框：使用广泛
+			 表单元素必须有一个属性  name  用来提交数据
+			 value属性：文本框中的具体内容
+			 键值对：name=value
+			 placeholder：提示语
+			 readonly:只读  数据可以提交，不能修改数据
+			 disabled:禁用  无法正常提交数据 无法修改数据
+			 写法：
+				readonly="readonly"
+				readonly
+				readonly="true"
+			 -->
+			<input type="text" name="username" placeholder="用户名">
+			<input type="text" name="username1" id="" readonly="readonly" value="123">
+			<input type="text" name="username2" id="" disabled="disabled" value="123">
+			
+			<!-- 密码框  录入的信息不可见-->
+			<input type="password" name="password" >
+			
+			<!-- 单选按钮 
+			注意：一组单选按钮，必须通过name属性控制，让它们在一个分组里，然后在一个分组里只能选择一个
+			正常状态下，提交数据为gender=on,不同选项的value要进行区分   便于后台区分
+			默认选中：checked="checked"
+			-->
+			性别:
+			<input type="radio" name="gender" id="" value="0" checked="checked">男
+			<input type="radio" name="gender" id="" value="1">女
+			
+			<!-- 多选按钮  name属性控制在同一个分组-->   
+			<input type="checkbox" name="lovebox" value="1" checked="checked">雷神
+			<input type="checkbox" name="lovebox" value="2" checked="checked">无影
+			<input type="checkbox" name="lovebox" value="3">火麒麟
+			<input type="checkbox" name="lovebox" value="4">毁灭
+			
+			<!-- 文件 -->
+			<input type="file">
+			
+			<!-- 隐藏域 -->
+			<input type="hidden" name="uname" value="123456">
+			
+			<!-- 按钮 -->
+			<!-- 普通按钮 普通按钮没有什么效果,需要结合js-->
+			<input type="button" value="普通按钮">
+			
+			<!-- 特殊按钮 重置按钮 将页面恢复到初始页面 -->
+			<input type="reset">
+			
+			<!-- 图片按钮 -->
+			<img src="img/Screenshot_20190226-232915.jpg" alt="">
+			<input type="image" src="img/Screenshot_20190226-232915.jpg">
+			
+			<!-- 下拉列表   selected="selected" 默认选中    multiple="multiple" 多选-->
+			书籍列表
+			<select name="book" id="" multiple="multiple">
+				<option value="0">---请选择---</option>
+				<option value="1">《呐喊》</option>
+				<option value="2">《彷徨》</option>
+				<option value="3" selected="selected">《数据结构》</option>
+				<option value="4">《算法刨析》</option>
+			</select>
+			
+			<!-- 多行文本框  resize:none 大小不可变-->
+			<textarea style="resize: none;" rows="10" cols="30">
+				这里输入文字
+			</textarea>
+			
+			<!-- label标签
+			 一般会在想要获得焦点的标签上加入一个id属性，然后label中的for属性跟id配合使用
+			 -->
+			<label for="uname">用户名：</label><input type="text" name="username3" id="uname">
+			
+			<input type="submit" value="提交">
+		</form>
+	</body>
+</html>
